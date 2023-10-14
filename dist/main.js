@@ -1,1 +1,1 @@
-document.getElementById("submit").addEventListener("click",(function(e){e.preventDefault()}));
+document.getElementById("submit").addEventListener("click",(function(e){e.preventDefault();const t=document.getElementById("prompt").value;console.log(t)}));

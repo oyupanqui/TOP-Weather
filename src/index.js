@@ -5,4 +5,8 @@ const submitBtn = document.getElementById("submit")
 
 submitBtn.addEventListener("click", function (event) {
     event.preventDefault()
+
+    const prompt = document.getElementById("prompt").value
+    console.log(prompt)
 })
+
