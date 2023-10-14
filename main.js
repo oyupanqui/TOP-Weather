@@ -1,1 +1,1 @@
-console.log("hi"),console.log("test");
+document.getElementById("submit").addEventListener("click",(function(e){e.preventDefault()}));
