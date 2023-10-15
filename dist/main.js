@@ -1,1 +1,1 @@
-document.getElementById("submit").addEventListener("click",(function(e){e.preventDefault();const t=document.getElementById("prompt").value;console.log(t)}));
+document.getElementById("submit").addEventListener("click",(function(e){e.preventDefault(),async function(e,t){const n=`https://api.weatherapi.com/v1/current.json?key=4968ce87e17e44e083313750231310&q=${document.getElementById("prompt").value}&aqi=no`;await fetch(n,{mode:"cors"}).then((function(e){return e.json()})).then((function(e){console.log(e)}))}()}));
