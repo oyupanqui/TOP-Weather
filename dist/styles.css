@@ -50,6 +50,7 @@ header {
     justify-content: space-evenly;
     padding: 20px;
     text-align: center;
+    gap: 20px;
 }
 
 #map { 
