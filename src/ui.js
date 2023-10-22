@@ -37,7 +37,6 @@ export function submitListener () {
         
         getWeatherData(prompt)
             .then((response) => responseUI(response))
-
     })
     return submitBtn
 }
