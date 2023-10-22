@@ -1,3 +1,4 @@
+import { mapListener } from './map'
 import { getWeatherData } from './search' 
 
 const countryDiv = document.getElementById("country")
@@ -36,7 +37,10 @@ export function submitListener () {
         const prompt = document.getElementById("prompt").value
         
         getWeatherData(prompt)
-            .then((response) => responseUI(response))
+            .then((response) => {
+                responseUI(response)
+                mapListener(response)
+            })
     })
     return submitBtn
 }

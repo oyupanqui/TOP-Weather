@@ -2,8 +2,8 @@ import { submitListener } from './ui'
 import { loadMap } from './map'
 
 function initialize () {
-    submitListener()
     loadMap()
+    submitListener()
 }
 
 export default initialize
