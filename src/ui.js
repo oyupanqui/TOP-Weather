@@ -5,6 +5,7 @@ const countryDiv = document.getElementById("country")
 const latitudeDiv = document.getElementById("latitude")
 const longitudeDiv = document.getElementById("longitude")
 const nameDiv = document.getElementById("name")
+const regionDiv = document.getElementById("region")
 const timeDiv = document.getElementById("time")
 
 const cloudDiv = document.getElementById("cloud")
@@ -19,6 +20,7 @@ function responseUI (response) {
     latitudeDiv.textContent = response.location.lat
     longitudeDiv.textContent = response.location.lon
     nameDiv.textContent = response.location.name
+    regionDiv.textContent = response.location.region
     timeDiv.textContent = response.location.localtime
     cloudDiv.textContent = response.current.cloud
     conditionDiv.textContent = response.current.condition.text
@@ -40,6 +42,7 @@ export function submitListener () {
             .then((response) => {
                 responseUI(response)
                 mapListener(response)
+                console.log(response)
             })
     })
     return submitBtn
