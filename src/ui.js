@@ -1,5 +1,5 @@
 import { mapListener } from './map'
-import { getWeatherData } from './search' 
+import { getWeatherData, getGiphyData } from './search' 
 
 const countryDiv = document.getElementById("country")
 const regionDiv = document.getElementById("region")
@@ -11,7 +11,9 @@ const precipitationDiv = document.getElementById("precipitation")
 const temperatureDiv = document.getElementById("temperature")
 const windDiv = document.getElementById("wind")
 
-function responseUI (response) {
+const giphyDiv = document.getElementById("giphy")
+
+function weatherUI (response) {
     countryDiv.textContent = response.location.country
     nameDiv.textContent = response.location.name
     regionDiv.textContent = response.location.region
@@ -21,6 +23,13 @@ function responseUI (response) {
     precipitationDiv.textContent = response.current.precip_mm
     temperatureDiv.textContent = response.current.temp_c
     windDiv.textContent = response.current.wind_mph
+}
+
+function giphyUI (response) {
+    console.log(response)
+    const link = response.data[Math.floor(Math.random()*response.data.length)].embed_url
+    giphyDiv.src = link
+    return link
 }
 
 export function submitListener () {
@@ -33,9 +42,10 @@ export function submitListener () {
         
         getWeatherData(prompt)
             .then((response) => {
-                responseUI(response)
+                weatherUI(response)
                 mapListener(response)
-                console.log(response)
+                getGiphyData(response.location.country)
+                    .then(giphyUI)
             })
     })
     return submitBtn
