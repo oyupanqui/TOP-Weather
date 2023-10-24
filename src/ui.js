@@ -2,12 +2,8 @@ import { mapListener } from './map'
 import { getWeatherData } from './search' 
 
 const countryDiv = document.getElementById("country")
-const latitudeDiv = document.getElementById("latitude")
-const longitudeDiv = document.getElementById("longitude")
-const nameDiv = document.getElementById("name")
 const regionDiv = document.getElementById("region")
-const timeDiv = document.getElementById("time")
-
+const nameDiv = document.getElementById("name")
 const cloudDiv = document.getElementById("cloud")
 const conditionDiv = document.getElementById("condition")
 const humidityDiv = document.getElementById("humidity")
@@ -17,11 +13,8 @@ const windDiv = document.getElementById("wind")
 
 function responseUI (response) {
     countryDiv.textContent = response.location.country
-    latitudeDiv.textContent = response.location.lat
-    longitudeDiv.textContent = response.location.lon
     nameDiv.textContent = response.location.name
     regionDiv.textContent = response.location.region
-    timeDiv.textContent = response.location.localtime
     cloudDiv.textContent = response.current.cloud
     conditionDiv.textContent = response.current.condition.text
     humidityDiv.textContent = response.current.humidity
