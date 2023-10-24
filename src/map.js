@@ -4,7 +4,7 @@ export function loadMap () {
     map = L.map('map').setView([0, 0], 0)
     const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
-        attribution: '&copy; OpenStreeMap'
+        attribution: '&copy; OpenStreetMap'
     }).addTo(map)
     const google = L.tileLayer('https://mt.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
         maxZoom: 19,
