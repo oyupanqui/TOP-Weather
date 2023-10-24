@@ -58,3 +58,7 @@ header {
     height: 300px;
     width: 300px
 }
+
+a:visited {
+    color: inherit;
+}
